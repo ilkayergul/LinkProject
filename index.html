@@ -21,68 +21,69 @@
     <div class="container-fluid">
       <h3 class="text-center mb-4">LinkProject</h3>
 
-        <div class="form-floating mb-3">
-          <select
-            class="form-select form-floating mb-3"
-            id="floatingSelect"
-            aria-label="Default select example"
-          >
-            <option selected>Kullanıcı seçiniz</option>
-            <option value="1">Hasan Özyavru</option>
-            <option value="2">İbrahim Ergül</option>
-            <option value="3">İlkay Ergül</option>
-          </select>
-          <label for="floatingSelect">Kullanıcı</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="url"
-            class="form-control"
-            id="floatingInput"
-            placeholder="http://www.example.com"
-          />
-          <label for="floatingInput">Favori Link </label>
-        </div>
-        <button type="button" class="btn btn-outline-success">KAYDET</button>
-      </form>
-      <br />
-      <table class="table caption-top">
-        <caption>
-          Favori Link Listesi
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Kullanıcı</th>
-            <th scope="col">Link</th>
-            <th scope="col">Durum</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>İbrahim Ergül</td>
-            <td><a href="https://www.w3schools.com/default.asp">https://www.w3schools.com/default.asp</a> </td>
-            <td><input type="checkbox" class="btn" id="btn-check-2-outlined" checked autocomplete="off">
-                <label class="btn" for="btn-check-2-outlined">İzledim</label><br></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>İbrahim Ergül</td>
-            <td><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></td>
-            <td><input type="checkbox" class="btn" id="btn-check-2-outlined"  autocomplete="off">
-                <label class="btn" for="btn-check-2-outlined">İzledim</label><br></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>İbrahim Ergül</td>
-            <td><a href="http://sclist.nesanotomasyon.com/">http://sclist.nesanotomasyon.com/</a></td>
-            <td><input type="checkbox" class="btn" id="btn-check-2-outlined" checked autocomplete="off">
-                <label class="btn" for="btn-check-2-outlined">İzledim</label><br></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="container">
+        <form class="form">
+          <div class="form-floating mb-3">
+            <select
+              class="form-select form-floating mb-3"
+              id="floatingSelect"
+              name="user"
+               aria-label="Kullanıcı"
+            >
+              <option selected>Kullanıcı seçiniz</option>
+              <option value="1">Hasan Özyavru</option>
+              <option value="2">İbrahim Ergül</option>
+              <option value="3">İlkay Ergül</option>
+            </select>
+            <label for="floatingSelect">Kullanıcı</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="url"
+              class="form-control"
+              id="floatingLink"
+              name="link"
+              placeholder="http://www.example.com"
+            />
+            <label for="floatingLink">Link</label>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea
+              class="form-control"
+              id="floatingDesc"
+              name="description"
+              style="min-height: 80px"
+            >
+            </textarea>
+            <label for="floatingDesc">Açıklama</label>
+          </div>
+          <button type="button" class="btn btn-outline-primary">KAYDET</button>
+        </form>
+
+        <div class="table-responsive">
+          <table class="table caption-top" id="table">
+            <caption>
+              Link Listesi
+            </caption>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Kullanıcı</th>
+                <th>Link</th>
+                <th>Açıklama</th>
+                <th class="text-center">Durum</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+  </div>
+</div>
+  
+    <script>
+      $(document).ready(function () {
+        CreateTable();
+      });
+    </script>
   </body>
 </html>
 
